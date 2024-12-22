@@ -13,7 +13,7 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()],
     },
   },
-  plugins: [vue(), vueDevTools()],
+  plugins: [vue() /* vueDevTools() */],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
