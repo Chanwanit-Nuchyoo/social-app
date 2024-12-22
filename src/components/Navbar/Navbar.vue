@@ -5,8 +5,8 @@ import NavPopover from '@/components/Navbar/NavPopover.vue'
 import ThemeToggler from '@/components/Navbar/ThemeToggler.vue'
 
 const menus = ref([
-  { name: 'home', icon: 'jam:home-f' },
-  { name: 'search', icon: 'jam:search' },
+  { name: 'home', icon: 'jam:home-f', toolTip: 'Home' },
+  { name: 'search', icon: 'jam:search', toolTip: 'Search' },
 ])
 const activeMenu = ref('home')
 
@@ -27,27 +27,14 @@ provide('activeMenu', activeMenu)
 
     <!-- Navigation Menus -->
     <div class="flex-1 flex justify-center h-full py-1 gap-2">
-      <!-- v-for="(m, i) in menus" -->
-      <!-- :key="i" -->
       <NavItem
         v-for="m in menus"
         :key="m.name"
         :name="m.name"
         :icon="m.icon"
+        :toolTip="m.toolTip"
         @click="activeMenu = m.name"
       />
-
-      <!-- <ul class="flex gap-4">
-        <li>
-          <HomeIcon />
-        </li>
-        <li>
-          <router-link to="/about" class="text-blue-500">About</router-link>
-        </li>
-        <li>
-          <router-link to="/contact" class="text-blue-500">Contact</router-link>
-        </li>
-      </ul> -->
     </div>
 
     <!-- Profile image that let user logout -->
