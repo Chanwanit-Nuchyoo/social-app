@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { defineProps } from 'vue'
 
 defineProps<{
   tip: string

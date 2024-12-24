@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import ShowTooltip from '@/components/utilities/ShowTooltip.vue'
 import { Icon } from '@iconify/vue'
-import ShowTooltip from '../utility/ShowTooltip.vue'
 </script>
 
 <template>
   <Popover>
     <PopoverTrigger as-child>
       <button
-        class="w-[40px] h-[40px] rounded-full bg-rose-900 cursor-pointer"
+        class="h-[40px] w-[40px] cursor-pointer rounded-full bg-rose-900"
         aria-label="More setting"
       />
     </PopoverTrigger>
-    <PopoverContent class="min-w-[120px] w-fit p-0 flex flex-col gap-1 rounded-md overflow-hidden">
+    <PopoverContent class="flex w-fit min-w-[120px] flex-col gap-1 overflow-hidden rounded-md p-0">
       <ShowTooltip tip="Profile" sr-only>
         <div
-          class="w-full flex items-center gap-2 hover:text-[hsl(var(--primary))] px-4 py-2 hover:bg-[hsl(var(--secondary))] focus:bg-[hsl(var(--secondary))] cursor-pointer"
+          class="flex w-full cursor-pointer items-center gap-2 px-4 py-2 hover:bg-[hsl(var(--secondary))] hover:text-[hsl(var(--primary))] focus:bg-[hsl(var(--secondary))]"
           tabindex="0"
         >
           <Icon icon="mingcute:profile-fill" width="20" />
@@ -24,11 +24,11 @@ import ShowTooltip from '../utility/ShowTooltip.vue'
       </ShowTooltip>
       <ShowTooltip tip="Settings" sr-only>
         <div
-          class="w-full flex items-center gap-2 hover:text-[hsl(var(--primary))] px-4 py-2 hover:bg-[hsl(var(--secondary))] focus:bg-[hsl(var(--secondary))] cursor-pointer"
+          class="flex w-full cursor-pointer items-center gap-2 px-4 py-2 hover:bg-[hsl(var(--secondary))] hover:text-[hsl(var(--primary))] focus:bg-[hsl(var(--secondary))]"
           tabindex="0"
         >
-          <Icon icon="carbon:settings" width="20" />
-          <p>Settings</p>
+          <Icon icon="tabler:logout" width="20" />
+          <p>Logout</p>
         </div>
       </ShowTooltip>
     </PopoverContent>

@@ -1,10 +1,43 @@
 <script setup lang="ts">
 import Navbar from '@/components/Navbar/Navbar.vue'
+import NavDrawer from '@/components/Navbar/NavDrawer.vue'
+import { useNavbarStore } from '@/stores/navbar'
+import { useWindowSize } from '@vueuse/core'
+import { computed, watch } from 'vue'
+
+const navbarStore = useNavbarStore()
+const { width } = useWindowSize()
+const isSmallerThanMd = computed(() => width.value < 768)
+
+watch(isSmallerThanMd, () => {
+  if (!isSmallerThanMd.value && navbarStore.activeMenu === 'more') {
+    navbarStore.activeMenu = 'home'
+  }
+})
 </script>
 
 <template>
-  <div>
+  <div class="flex min-h-screen flex-col">
+    <!-- Navbar -->
     <Navbar />
-    <RouterView />
+
+    <!-- Main Layout -->
+    <div class="mt-[var(--nav-height-mobile)] md:mt-[var(--nav-height)] flex flex-1">
+      <!-- Left Sidebar -->
+      <div
+        class="sticky top-[var(--nav-height-mobile)] md:top-[var(--nav-height)] hidden h-[calc(100vh-var(--nav-height-mobile))] md:h-[calc(100vh-var(--nav-height))] w-[300px] overflow-auto lg:block"
+      />
+
+      <!-- Main Content -->
+      <div class="flex-1">
+        <NavDrawer v-if="navbarStore.activeMenu === 'more' && isSmallerThanMd" />
+        <RouterView v-else />
+      </div>
+
+      <!-- Right Sidebar -->
+      <div
+        class="sticky top-[var(--nav-height-mobile)] md:top-[var(--nav-height)] hidden h-[calc(100vh-var(--nav-height-mobile))] md:h-[calc(100vh-var(--nav-height))] w-[300px] overflow-auto md:block"
+      ></div>
+    </div>
   </div>
 </template>

@@ -12,6 +12,7 @@
 
   :root {
     --nav-height: 3.5rem;
+    --nav-height-mobile: 6.1rem;
 
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;

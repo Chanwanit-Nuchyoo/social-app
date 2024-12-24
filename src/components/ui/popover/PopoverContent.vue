@@ -2,10 +2,10 @@
 import { cn } from '@/lib/utils'
 import {
   PopoverContent,
-  type PopoverContentEmits,
-  type PopoverContentProps,
   PopoverPortal,
   useForwardPropsEmits,
+  type PopoverContentEmits,
+  type PopoverContentProps,
 } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 

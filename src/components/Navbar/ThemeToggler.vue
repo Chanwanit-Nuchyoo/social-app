@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
 import Label from '@/components/ui/label/Label.vue'
-import Switch from '@/components/ui/switch/Switch.vue'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { Icon } from '@iconify/vue'
 import { useColorMode, useLocalStorage } from '@vueuse/core'
 import { watch } from 'vue'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 const mode = useColorMode()
 const isDarkMode = useLocalStorage('darkmode', false)
@@ -18,19 +17,19 @@ watch(isDarkMode, () => {
 </script>
 
 <template>
-  <div class="flex gap-1 items-center">
-    <Icon icon="iconamoon:mode-light-fill" width="22" />
+  <div class="flex items-center gap-1 [&>svg]:text-[18px] [&>svg]:md:text-[20px]">
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger as-child>
-          <Switch id="toggle-darkmode" v-model:checked="isDarkMode" />
+          <div id="toggle-darkmode" @click="isDarkMode = !isDarkMode">
+            <Icon icon="fluent:dark-theme-24-filled" width="20" />
+          </div>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Toggle dark theme</p>
+          <p>Darkmode</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
     <Label for="toggle-darkmode" class="sr-only">Toggle darkmode</Label>
-    <Icon icon="material-symbols:dark-mode-rounded" width="18" />
   </div>
 </template>
