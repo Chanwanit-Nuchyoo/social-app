@@ -17,7 +17,7 @@ const navbarStore = useNavbarStore()
     <button
       class="md:w-[4rem relative flex w-[3.5rem] cursor-pointer items-center justify-center rounded hover:bg-[hsl(var(--secondary))] hover:text-[hsl(var(--primary))] h-full [&>svg]:text-[25px]"
       :class="{ 'text-[hsl(var(--primary))]': navbarStore.activeMenu === name }"
-      @click="$emit('click', name)"
+      @click="$emit('click')"
       aria-label="Navigation item for {{ name }}"
     >
       <Icon :icon="icon" :aria-label="name" role="img" />

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Navbar from '@/components/Navbar/Navbar.vue'
-import NavDrawer from '@/components/Navbar/NavDrawer.vue'
+import Navbar from '@/components/navbar/Navbar.vue'
+import NavDrawer from '@/components/navbar/NavDrawer.vue'
 import { useNavbarStore } from '@/stores/navbar'
 import { useWindowSize } from '@vueuse/core'
 import { computed, watch } from 'vue'

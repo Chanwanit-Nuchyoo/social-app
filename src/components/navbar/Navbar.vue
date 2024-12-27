@@ -1,10 +1,20 @@
 <script setup lang="ts">
-import NavItem from '@/components/Navbar/NavItem.vue'
-import NavPopover from '@/components/Navbar/NavPopover.vue'
-import ThemeToggler from '@/components/Navbar/ThemeToggler.vue'
+import NavItem from '@/components/navbar/NavItem.vue'
+import NavPopover from '@/components/navbar/NavPopover.vue'
+import ThemeToggler from '@/components/navbar/ThemeToggler.vue'
 import { useNavbarStore } from '@/stores/navbar'
+import { useRouter } from 'vue-router'
 
 const navbarStore = useNavbarStore()
+const router = useRouter()
+
+const handleNavItemClicked = (name: string, link?: string) => {
+  navbarStore.activeMenu = name
+
+  if (link) {
+    router.push(link)
+  }
+}
 </script>
 
 <template>
@@ -31,14 +41,14 @@ const navbarStore = useNavbarStore()
           :name="m.name"
           :icon="m.icon"
           :toolTip="m.toolTip"
-          @click="navbarStore.activeMenu = m.name"
+          @click="handleNavItemClicked(m.name, m.link)"
         />
         <div class="relative block md:hidden">
           <NavItem
             name="more"
             icon="ci:hamburger-md"
             toolTip="More"
-            @click="navbarStore.activeMenu = 'more'"
+            @click="handleNavItemClicked('more')"
           />
         </div>
       </div>
