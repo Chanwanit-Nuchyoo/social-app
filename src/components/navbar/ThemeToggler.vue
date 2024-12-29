@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue'
 import Label from '@/components/ui/label/Label.vue'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Icon } from '@iconify/vue'
@@ -21,9 +22,15 @@ watch(isDarkMode, () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger as-child>
-          <div id="toggle-darkmode" @click="isDarkMode = !isDarkMode">
+          <Button
+            class="rounded-full"
+            variant="ghost"
+            size="icon"
+            id="toggle-darkmode"
+            @click="isDarkMode = !isDarkMode"
+          >
             <Icon icon="fluent:dark-theme-24-filled" width="20" />
-          </div>
+          </Button>
         </TooltipTrigger>
         <TooltipContent>
           <p>Darkmode</p>
