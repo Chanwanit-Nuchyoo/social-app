@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Dialog, DialogContent } from '@/components/ui/dialog'
+import { Icon } from '@iconify/vue/dist/iconify.js'
 import { computed, ref } from 'vue'
 
 interface User {
@@ -114,6 +115,25 @@ const showFullImage = (index: number) => {
           >
             <span class="text-white text-5xl font-semibold">+{{ remainingCount }}</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Action bar ( Like / Comments) -->
+      <div class="flex justify-between items-center">
+        <div class="flex gap-1 items-center">
+          <Button variant="ghost" class="rounded-full">
+            <Icon icon="bi:heart" />
+            <p class="text-sm">100</p>
+          </Button>
+          <Button variant="ghost" class="rounded-full">
+            <Icon icon="bi:chat" />
+            <p class="text-sm">20</p>
+          </Button>
+        </div>
+        <div>
+          <Button variant="ghost" class="rounded-full">
+            <p class="text-sm">Comment</p>
+          </Button>
         </div>
       </div>
     </CardContent>
