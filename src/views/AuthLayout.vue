@@ -5,7 +5,7 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 
 <template>
   <div class="flex gap-1 w-full h-screen">
-    <div class="flex flex-col flex-1 w-full h-full relative">
+    <div class="hidden md:flex flex-col flex-1 w-full h-full relative">
       <div class="absolute inset-0">
         <img
           src="@/assets/images/hanashii_2_light.webp"
