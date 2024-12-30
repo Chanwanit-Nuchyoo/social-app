@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PostInputBox from '@/components/common/PostInputBox.vue'
+import UserPost from '@/components/common/UserPost.vue'
 import ProfileAboutCard from '@/components/profile/ProfileAboutCard.vue'
 import ProfileCoverImage from '@/components/profile/ProfileCoverImage.vue'
 import ProfileFriendsCard from '@/components/profile/ProfileFriendsCard.vue'
@@ -39,8 +40,15 @@ useSyncNavActive('')
         </div>
       </div>
 
-      <div class="md:flex-[2]">
+      <div class="md:flex-[2] flex flex-col gap-4">
         <PostInputBox />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
+        <UserPost />
         <UserPost />
       </div>
     </div>

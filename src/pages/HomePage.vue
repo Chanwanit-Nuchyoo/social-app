@@ -7,5 +7,12 @@ import UserPost from '@/components/common/UserPost.vue'
   <div class="mx-auto max-w-2xl px-2 py-4 flex flex-col gap-4">
     <PostInputBox />
     <UserPost />
+    <UserPost />
+    <UserPost />
+    <UserPost />
+    <UserPost />
+    <UserPost />
+    <UserPost />
+    <UserPost />
   </div>
 </template>
