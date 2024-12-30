@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import InputBox from '@/components/common/InputBox.vue'
+import PostInputBox from '@/components/common/PostInputBox.vue'
+import UserPost from '@/components/common/UserPost.vue'
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl px-2 py-4">
-    <InputBox />
+  <div class="mx-auto max-w-2xl px-2 py-4 flex flex-col gap-4">
+    <PostInputBox />
+    <UserPost />
   </div>
 </template>

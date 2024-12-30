@@ -10,9 +10,13 @@ defineProps<{
       <img :src="coverImage" alt="user cover image" class="w-full h-full object-cover" />
     </div>
     <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl mx-auto md:rounded-sm overflow-hidden"
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl mx-auto overflow-hidden px-4 rounded-b-md"
     >
-      <img :src="coverImage" alt="user cover image" class="w-full h-full object-cover" />
+      <img
+        :src="coverImage"
+        alt="user cover image"
+        class="w-full h-full object-cover rounded-b-md"
+      />
     </div>
   </div>
 </template>

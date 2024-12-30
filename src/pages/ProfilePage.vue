@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InputBox from '@/components/common/InputBox.vue'
+import PostInputBox from '@/components/common/PostInputBox.vue'
 import ProfileAboutCard from '@/components/profile/ProfileAboutCard.vue'
 import ProfileCoverImage from '@/components/profile/ProfileCoverImage.vue'
 import ProfileFriendsCard from '@/components/profile/ProfileFriendsCard.vue'
@@ -14,22 +14,22 @@ useSyncNavActive('')
 
 <template>
   <ProfileCoverImage cover-image="https://picsum.photos/seed/picsum/1920/1080" />
-  <div class="flex flex-col max-w-6xl mx-auto px-4 md:px-0 relative">
-    <div
-      class="py-4 flex justify-between bg-[hsl(var(--background))] sticky top-[var(--nav-height-mobile)] md:top-[var(--nav-height)] z-10"
-    >
-      <ProfileUser />
+  <div class="flex flex-col max-w-6xl mx-auto px-4 relative">
+    <div class="sticky top-[var(--nav-height-mobile)] md:top-[var(--nav-height)] z-10">
+      <div class="py-4 flex justify-between bg-[hsl(var(--background))]">
+        <ProfileUser />
 
-      <!-- Edit button -->
-      <div class="flex items-center">
-        <Button variant="secondary">
-          <Icon icon="flowbite:edit-solid" />
-          <p>แก้ไขโปรไฟล์</p>
-        </Button>
+        <!-- Edit button -->
+        <div class="flex items-center">
+          <Button>
+            <Icon icon="flowbite:edit-solid" />
+            <p>แก้ไขโปรไฟล์</p>
+          </Button>
+        </div>
       </div>
-    </div>
 
-    <Separator />
+      <Separator />
+    </div>
 
     <div class="flex gap-4 my-4 flex-col md:flex-row">
       <div class="flex flex-col md:flex-[1.3] md:sticky md:top-0 md:self-start">
@@ -40,7 +40,8 @@ useSyncNavActive('')
       </div>
 
       <div class="md:flex-[2]">
-        <InputBox />
+        <PostInputBox />
+        <UserPost />
       </div>
     </div>
   </div>
